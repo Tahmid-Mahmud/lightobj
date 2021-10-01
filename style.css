@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Baloo Tamma 2', cursive!important;
+    font-size: 1.5rem;
+}
+
+p{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Navbar */
+
+
+
+/* ProgrssBar */
+
+.bar{
+    margin-bottom: 8px;
+}
+
+
+.bar .progress{
+    height: 0.5rem;
+    border-radius: 0px;
+}
+
+.info span{
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

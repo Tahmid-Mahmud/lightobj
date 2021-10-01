@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $("#exampleModal").modal('show');
+      });
+    </script>
+
+    <!--Firebase Libraries-->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script> 
+    <script src="firebase.js"></script>
+
+    <title>LightOBJ | Home</title>
+  </head>
+  <body>
+      <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand font-weight-bold text-primary" href="#">LghtOBJ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contents</a>
+              </li>
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <div class="mx-1 row">
+              <button class="btn btn-outline-success mx-1 my-2 my-sm-0">Search</button>
+              <button class="btn btn-outline-success mx-1 mr-2 my-2 my-sm-0">Logout</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div id="alert" class="alert alert-success alert-dismissible fade show" style="display: none;" role="alert">
+        <strong>Welcome Tahmid Mahmud!</strong>&shy; You are now logged in.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- MOdals -->
+
+  <div class="modal fade" id="exampleModal" class="modal" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login to LightOBJ</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="user">Username</label>
+              <input type="text" class="form-control" id="user" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="pass">Password</label>
+              <input type="password" class="form-control" id="pass">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Keep me logged me</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <section id="projects" class="offset mx-3 mt-5">
+        <h1 class="text-center my-4"><span>My Projects</span></h1>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="card" style="width: 18rem; display: block; margin: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Mathematics</h5>
+                            <p class="card-text">I have made a number of responsive contents of different devices. These designs are either graphical or programmed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="card" style="width: 18rem; display: block; margin: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Science</h5>
+                            <p class="card-text">It is also a part of responsive designing project. I have worked with 4 to 5 business websites and templates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <div class="card" style="width: 18rem; display: block; margin: auto;">
+                      <div class="card-body">
+                          <h5 class="card-title">English</h5>
+                          <p class="card-text">It is also a part of responsive designing project. I have worked with 4 to 5 business websites and templates.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" style="width: 18rem; display: block; margin: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">Notes</h5>
+                        <p class="card-text">It is also a part of responsive designing project. I have worked with 4 to 5 business websites and templates.</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="card" style="width: 18rem; display: block; margin: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Others</h5>
+                            <p class="card-text">I have made a number of responsive contents of different devices. These designs are either graphical or programmed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="card" style="width: 18rem; display: block; margin: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Demo</h5>
+                            <p class="card-text">It is also a part of responsive designing project. I have worked with 4 to 5 business websites and templates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+      <!-- ===== Footer Section ===== -->
+      <footer class="bg-dark text-center text-white">
+            <!-- Copyright -->
+            <div class="text-center p-3 m-heading" style="background-color: rgba(0, 0, 0, 0.2);">
+              <p class="text-white" style="margin-bottom: 8px;">&copy; 2021 Copyright: &shy; LightOBJ | All rights reserved!</p>
+              <p  style="margin-bottom: 10px;"><span>designed by </span><b class="text-warning font-weight-300">Tahmid Mahmud</b></p>
+          </div>
+      </footer>
+
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>
