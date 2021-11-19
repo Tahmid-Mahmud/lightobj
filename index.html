@@ -15,6 +15,27 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/996973c893.js"></script>
 
+  <!--Firebase Libraries-->
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+  <script src="firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function ready(){
+      $(document).ready(function () {
+          if(localStorage.getItem("isLogin")){
+              document.getElementById("lBtn").innerHTML="Logout";
+              document.getElementById("lBtn").onclick=function(){
+                localStorage.clear();
+                document.getElementById("lBtn").innerHTML="Login";
+              };
+          }
+      });
+    }
+    // Function calling
+    ready();
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +44,6 @@
     href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
-  
-  <!--Firebase Libraries-->
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script> 
-    <script src="firebase.js"></script>
-  
   <title>LightOBJ | Home</title>
 </head>
 
@@ -58,26 +72,19 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <div class="mx-1 row">
           <button class="btn btn-outline-success mx-1 my-2 my-sm-0">Search</button>
-          <button class="btn btn-outline-success mx-1 mr-2 my-2 my-sm-0"  data-toggle="modal" data-target="#exampleModal">Login</button>
+          <button id="lBtn" class="btn btn-outline-success mx-1 mr-2 my-2 my-sm-0"  data-toggle="modal" data-target="#exampleModal">Login</button>
         </div>
       </div>
     </div>
   </nav>
-  
-  <div id="alert" class="alert alert-success alert-dismissible fade show" style="display: none;" role="alert">
-        <strong>Welcome Tahmid Mahmud!</strong>&shy; You are now logged in.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
 
   <!-- MOdals -->
 
-  <div class="modal fade" id="exampleModal" class="modal" tabindex="-1">
+  <div class="modal fade" id="exampleModal" class="modal" data-backdrop="static" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Login to the site</h5>
+          <h5 class="modal-title">Login to LightOBJ</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -86,11 +93,12 @@
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input type="tyext" class="form-control" id="user" aria-describedby="emailHelp">
+              <input type="text" value="Tahmid Mahmud" class="form-control" id="user" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" id="pass">
+              <small id="error" style="display: none;" class="text-danger">Invalid Password</small>
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -109,9 +117,9 @@
 
 
   <section class="container my-5">
-    <h2 class="text-left text-dark" style="font-family: 'Baloo Tamma 2', cursive;">Welcome to your LightOBJ</h2>
+    <h2 class="text-left text-dark m-2" style="font-family: 'Baloo Tamma 2', cursive;">Welcome to your LightOBJ</h2>
     <hr>
-    <div class="row container">
+    <div class="row m-2">
       <div class="col-12 col-md-12 col-lg-12 p-4 text-white" style="background: rgb(51, 47, 71); border-radius: 6px;">
         <h3 class="text-center font-weight-bold" style="font-family: 'Ubuntu', cursive;">Welcome!</h3>
         <div class="row mt-4">
