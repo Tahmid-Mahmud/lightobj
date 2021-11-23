@@ -26,8 +26,6 @@ function captureAll(token) {
 function login() {
     var username = document.getElementById("user").value;
     var passValue = document.getElementById("pass").value;
-    username="Tahmid-Mahmud";
-    passValue="progress-6b92a";
 
     // Initialize Firebase
     firebaseConfig["authDomain"]=passValue+".firebaseapp.com";
